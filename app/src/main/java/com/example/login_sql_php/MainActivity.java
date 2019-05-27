@@ -79,16 +79,15 @@ public class MainActivity extends AppCompatActivity {
             if (!(password.isEmpty())){
 
                 if (!(email.isEmpty())){
+
                     progressDialog.show();
                     StringRequest stringRequest = new StringRequest(Request.Method.POST,
                             Constants.URL_REGISTER,
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-
                                     try {
                                         JSONObject jsonObject = new JSONObject(response);
-
                                         Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
                                         progressDialog.dismiss();
                                         startActivity(new Intent(MainActivity.this, Profile.class));

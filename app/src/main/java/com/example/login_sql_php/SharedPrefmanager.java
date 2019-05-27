@@ -17,6 +17,10 @@ public class SharedPrefmanager {
     private static final String KEY_USER_EMAIL = "useremail";
     private static final String KEY_USER_ID = "userid";
 
+    private static final String KEY_SHOP_ID = "shopId";
+    private static final String KEY_SHOP_OWNER_NAME = "shopOwner";
+    private static final String KEY_SHOP_CONTACT = "shopContact";
+
 
     private SharedPrefmanager(Context context) {
         mctx = context;
@@ -44,6 +48,19 @@ public class SharedPrefmanager {
 
     }
 
+    public boolean shopLogin(String id, String ownerName, String ContactNumber){
+
+        SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(KEY_SHOP_ID, id);
+        editor.putString(KEY_SHOP_OWNER_NAME, ownerName);
+        editor.putString(KEY_SHOP_CONTACT, ContactNumber);
+
+        editor.apply();
+        return true;
+    }
+
     public boolean isLoggedIn(){
 
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
@@ -56,6 +73,19 @@ public class SharedPrefmanager {
         return false;
     }
 
+    public boolean isShopLoggedIn(){
+
+        SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
+
+        if (sharedPreferences.getString(KEY_SHOP_ID, null) != null){
+
+            return true;
+        }
+
+        return false;
+    }
+
+
     public boolean logout(){
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -66,15 +96,42 @@ public class SharedPrefmanager {
         return true;
     }
 
+    public boolean Shoplogout(){
+        SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.clear();
+        editor.apply();
+
+        return true;
+    }
+
+
     public String getUserName(){
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USERNAME, null);
 
     }
 
+    public String getShopId() {
+        SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_SHOP_ID, null);
+
+    }
+
     public String getUserEmail(){
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_EMAIL, null);
+    }
+
+    public String getShopOwnerName(){
+        SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_SHOP_OWNER_NAME, null);
+    }
+
+    public String getShopContactNumber(){
+        SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_SHOP_CONTACT, null);
     }
 
 }

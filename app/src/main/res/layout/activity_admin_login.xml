@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".adminLogin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shop Details"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:layout_margin="40dp"/>
+
+        <EditText
+            android:id="@+id/adminShopName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Shop Name"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/adminSeatcapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Seat Capacity"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/adminOpeningTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Opening Time"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/adminClosingTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Closing Time"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/adminleaveDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Leave Days"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/adminOwnerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Owner Name"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/adminContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact Number"
+            android:layout_margin="40dp"
+            android:singleLine="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pricing"
+                android:textSize="25dp"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="left"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:columnCount="2"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Haircut"
+                    android:textSize="15dp"
+                    android:layout_columnWeight="1"
+                    />
+                <EditText
+                    android:layout_columnWeight="1"
+                    android:id="@+id/haircutET"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Haircut"
+                    />
+
+
+            </GridLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:columnCount="2"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Shaving"
+                    android:textSize="15dp"
+                    android:layout_columnWeight="1"
+                    />
+                <EditText
+                    android:layout_columnWeight="1"
+                    android:id="@+id/shavingET"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Shaving"
+                    />
+
+
+            </GridLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:columnCount="2"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Haircut \n+\n Shaving"
+                    android:textSize="15dp"
+                    android:layout_columnWeight="1"
+                    />
+                <EditText
+                    android:layout_columnWeight="1"
+                    android:id="@+id/hairShaveET"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Haircut + Shaving"
+                    />
+
+
+            </GridLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:columnCount="2"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Head Shaving"
+                    android:textSize="15dp"
+                    android:layout_columnWeight="1"
+                    />
+                <EditText
+                    android:layout_columnWeight="1"
+                    android:id="@+id/headShaveET"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Head Shaving"
+                    />
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:columnCount="2"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Haircut - Child"
+                    android:textSize="15dp"
+                    android:layout_columnWeight="1"
+                    />
+                <EditText
+                    android:layout_columnWeight="1"
+                    android:id="@+id/hairChildET"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Haircut - Child"
+                    />
+
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/adminSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Submit"
+            android:layout_marginHorizontal="90dp"
+            android:layout_marginVertical="20dp"/>
+    </LinearLayout>
+
+</ScrollView>
