@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".shopLogin"></activity>
+        <activity android:name=".AdminPage"></activity>
+        <activity android:name=".shopLogin" />
         <activity android:name=".adminLogin" />
         <activity android:name=".userLogin" />
         <activity android:name=".Profile" />

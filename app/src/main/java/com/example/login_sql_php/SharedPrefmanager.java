@@ -85,7 +85,6 @@ public class SharedPrefmanager {
         return false;
     }
 
-
     public boolean logout(){
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -105,7 +104,6 @@ public class SharedPrefmanager {
 
         return true;
     }
-
 
     public String getUserName(){
         SharedPreferences sharedPreferences = mctx.getSharedPreferences(SHARED_PREF_NAME,  Context.MODE_PRIVATE);
