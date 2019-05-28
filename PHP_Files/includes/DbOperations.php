@@ -91,14 +91,17 @@
 			}else{
 				$stmt = $this->con->prepare("INSERT INTO `Shops` (`id`, `shopName`, `seatCapacity`, `openingTime`, `closingTime`, `leaveDays`, `ownerName`, `contactNumber`, `Pricing`, `password`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
+				$stnt = $this->con->prepare("INSERT INTO `ShopStatus` (`id`, `shopName`) VALUES (?, ?)");
+
 				$stmt->bind_param("ssssssssss", $id, $shopName, $seatCapacity, $openingTime, $closingTime, $leaveDay, $ownerName, $contactNumber, $pricing, $password);
 
-				if($stmt->execute()){
+				$stnt->bind_param("ss", $id, $shopName);
+
+				if($stmt->execute() AND $stnt->execute()){
 					return 1;
 				}else{
 					return 2;
 				}
-
 			}
 
 		}
@@ -113,4 +116,53 @@
 			return $stmt->num_rows > 0;
 
 		}
+
+		public function getShopForAdmin($id){
+
+			$stmt = $this->con->prepare("SELECT * FROM ShopStatus WHERE id = ?");
+			$stmt->bind_param("s", $id);
+
+			if($stmt->execute()){
+
+				return $stmt->get_result()->fetch_assoc();
+			}else{
+				return false;
+			}
+
+
+		}
+
+		public function openShop($id){
+
+			$stmt = $this->con->prepare("UPDATE `ShopStatus` SET `status`= 1 WHERE id = ?");
+			$stmt->bind_param("s", $id);
+
+			if ($stmt->execute()){
+
+				return true;
+
+			}else{
+
+				return false;
+			}
+
+		}
+
+		public function closeShop($id){
+
+			$stmt = $this->con->prepare("UPDATE `ShopStatus` SET `status`= 0 WHERE id = ?");
+			$stmt->bind_param("s", $id);
+
+			if ($stmt->execute()){
+
+				return true;
+
+			}else{
+
+				return false;
+				
+			}
+
+		}
+
 	}
